@@ -19,7 +19,6 @@ const ContactSection = () => {
             <span className="text-foreground">Hablemos de tu </span>
             <span className="text-tech-blue">Proyecto</span>
           </h2>
-          
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             ¿Listo para transformar tu empresa con tecnología de vanguardia? Contactanos hoy mismo.
           </p>

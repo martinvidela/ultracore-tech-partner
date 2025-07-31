@@ -4,7 +4,7 @@ import { Switch } from "@/components/ui/switch";
 import { Menu, X, Zap, Moon, Sun, Globe } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { useTranslation } from "react-i18next";
-import logo from "../../src/assets/u-sola.png";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -15,13 +15,13 @@ const Header = () => {
   };
 
   const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === "es" ? "en" : "es");
+    i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
   };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
     }
   };
@@ -30,47 +30,44 @@ const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="p-2 bg-gradient-primarysss rounded-lg">
-            {/* <Zap className="h-6 w-6 text-primary-foreground" /> */}
-            <img src={logo} className="w-8" alt="" />
+          <div className="p-2 bg-gradient-primary rounded-lg">
+            <Zap className="h-6 w-6 text-primary-foreground" />
           </div>
           <span className="text-xl font-bold text-foreground">UltraCore</span>
-          <span className="text-sm text-tech-blue font-medium">
-            Soluciones IT
-          </span>
+          <span className="text-sm text-tech-blue font-medium">Soluciones IT</span>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <button
-            onClick={() => scrollToSection("inicio")}
+          <button 
+            onClick={() => scrollToSection('inicio')}
             className="text-foreground hover:text-tech-blue transition-colors"
           >
-            {t("nav.home")}
+            {t('nav.home')}
           </button>
-          <button
-            onClick={() => scrollToSection("nosotros")}
+          <button 
+            onClick={() => scrollToSection('nosotros')}
             className="text-foreground hover:text-tech-blue transition-colors"
           >
-            {t("nav.about")}
+            {t('nav.about')}
           </button>
-          <button
-            onClick={() => scrollToSection("servicios")}
+          <button 
+            onClick={() => scrollToSection('servicios')}
             className="text-foreground hover:text-tech-blue transition-colors"
           >
-            {t("nav.services")}
+            {t('nav.services')}
           </button>
-          <button
-            onClick={() => scrollToSection("casos")}
+          <button 
+            onClick={() => scrollToSection('casos')}
             className="text-foreground hover:text-tech-blue transition-colors"
           >
-            {t("nav.cases")}
+            {t('nav.cases')}
           </button>
-          <button
-            onClick={() => scrollToSection("contacto")}
+          <button 
+            onClick={() => scrollToSection('contacto')}
             className="text-foreground hover:text-tech-blue transition-colors"
           >
-            {t("nav.contact")}
+            {t('nav.contact')}
           </button>
         </nav>
 
@@ -79,27 +76,28 @@ const Header = () => {
           <div className="flex items-center space-x-2">
             <Globe className="h-4 w-4" />
             <Switch
-              checked={i18n.language === "en"}
+              checked={i18n.language === 'en'}
               onCheckedChange={toggleLanguage}
             />
-            <span className="text-sm">
-              {(i18n.language || "es").toUpperCase()}
-            </span>
+            <span className="text-sm">{(i18n.language || 'es').toUpperCase()}</span>
           </div>
 
           {/* Theme Switch */}
           <div className="flex items-center space-x-2">
             <Sun className="h-4 w-4" />
-            <Switch checked={theme === "dark"} onCheckedChange={toggleTheme} />
+            <Switch
+              checked={theme === "dark"}
+              onCheckedChange={toggleTheme}
+            />
             <Moon className="h-4 w-4" />
           </div>
 
-          <Button
-            variant="outline_tech"
+          <Button 
+            variant="outline_tech" 
             size="sm"
-            onClick={() => scrollToSection("contacto")}
+            onClick={() => scrollToSection('contacto')}
           >
-            {t("nav.request_meeting")}
+            {t('nav.request_meeting')}
           </Button>
         </div>
 
@@ -108,11 +106,7 @@ const Header = () => {
           className="md:hidden p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
@@ -120,35 +114,35 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-background border-b border-border">
           <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <button
-              onClick={() => scrollToSection("inicio")}
+            <button 
+              onClick={() => scrollToSection('inicio')}
               className="text-left text-foreground hover:text-tech-blue transition-colors"
             >
-              {t("nav.home")}
+              {t('nav.home')}
             </button>
-            <button
-              onClick={() => scrollToSection("nosotros")}
+            <button 
+              onClick={() => scrollToSection('nosotros')}
               className="text-left text-foreground hover:text-tech-blue transition-colors"
             >
-              {t("nav.about")}
+              {t('nav.about')}
             </button>
-            <button
-              onClick={() => scrollToSection("servicios")}
+            <button 
+              onClick={() => scrollToSection('servicios')}
               className="text-left text-foreground hover:text-tech-blue transition-colors"
             >
-              {t("nav.services")}
+              {t('nav.services')}
             </button>
-            <button
-              onClick={() => scrollToSection("casos")}
+            <button 
+              onClick={() => scrollToSection('casos')}
               className="text-left text-foreground hover:text-tech-blue transition-colors"
             >
-              {t("nav.cases")}
+              {t('nav.cases')}
             </button>
-            <button
-              onClick={() => scrollToSection("contacto")}
+            <button 
+              onClick={() => scrollToSection('contacto')}
               className="text-left text-foreground hover:text-tech-blue transition-colors"
             >
-              {t("nav.contact")}
+              {t('nav.contact')}
             </button>
 
             {/* Mobile Theme and Language Controls */}
@@ -156,14 +150,12 @@ const Header = () => {
               <div className="flex items-center space-x-2">
                 <Globe className="h-4 w-4" />
                 <Switch
-                  checked={i18n.language === "en"}
+                  checked={i18n.language === 'en'}
                   onCheckedChange={toggleLanguage}
                 />
-                <span className="text-sm">
-                  {(i18n.language || "es").toUpperCase()}
-                </span>
+                <span className="text-sm">{(i18n.language || 'es').toUpperCase()}</span>
               </div>
-
+              
               <div className="flex items-center space-x-2">
                 <Sun className="h-4 w-4" />
                 <Switch
@@ -174,13 +166,13 @@ const Header = () => {
               </div>
             </div>
 
-            <Button
-              variant="tech"
+            <Button 
+              variant="tech" 
               size="sm"
-              onClick={() => scrollToSection("contacto")}
+              onClick={() => scrollToSection('contacto')}
               className="w-fit"
             >
-              {t("nav.request_meeting")}
+              {t('nav.request_meeting')}
             </Button>
           </nav>
         </div>
