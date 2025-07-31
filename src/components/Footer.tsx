@@ -24,6 +24,7 @@ const Footer = () => {
               Transformando empresas con tecnología de vanguardia
             </p>
           </div>
+          
         </div>
       </div>
     </footer>
