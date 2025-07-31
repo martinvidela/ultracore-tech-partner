@@ -79,7 +79,7 @@ const Header = () => {
               checked={i18n.language === 'en'}
               onCheckedChange={toggleLanguage}
             />
-            <span className="text-sm">{i18n.language.toUpperCase()}</span>
+            <span className="text-sm">{(i18n.language || 'es').toUpperCase()}</span>
           </div>
 
           {/* Theme Switch */}
@@ -153,7 +153,7 @@ const Header = () => {
                   checked={i18n.language === 'en'}
                   onCheckedChange={toggleLanguage}
                 />
-                <span className="text-sm">{i18n.language.toUpperCase()}</span>
+                <span className="text-sm">{(i18n.language || 'es').toUpperCase()}</span>
               </div>
               
               <div className="flex items-center space-x-2">
