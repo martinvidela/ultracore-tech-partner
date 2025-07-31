@@ -1,9 +1,22 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Zap } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import { Menu, X, Zap, Moon, Sun, Globe } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const { t, i18n } = useTranslation();
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
+  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -30,41 +43,61 @@ const Header = () => {
             onClick={() => scrollToSection('inicio')}
             className="text-foreground hover:text-tech-blue transition-colors"
           >
-            Inicio
+            {t('nav.home')}
           </button>
           <button 
             onClick={() => scrollToSection('nosotros')}
             className="text-foreground hover:text-tech-blue transition-colors"
           >
-            Nosotros
+            {t('nav.about')}
           </button>
           <button 
             onClick={() => scrollToSection('servicios')}
             className="text-foreground hover:text-tech-blue transition-colors"
           >
-            Servicios
+            {t('nav.services')}
           </button>
           <button 
             onClick={() => scrollToSection('casos')}
             className="text-foreground hover:text-tech-blue transition-colors"
           >
-            Casos de Éxito
+            {t('nav.cases')}
           </button>
           <button 
             onClick={() => scrollToSection('contacto')}
             className="text-foreground hover:text-tech-blue transition-colors"
           >
-            Contacto
+            {t('nav.contact')}
           </button>
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
+          {/* Language Switch */}
+          <div className="flex items-center space-x-2">
+            <Globe className="h-4 w-4" />
+            <Switch
+              checked={i18n.language === 'en'}
+              onCheckedChange={toggleLanguage}
+            />
+            <span className="text-sm">{i18n.language.toUpperCase()}</span>
+          </div>
+
+          {/* Theme Switch */}
+          <div className="flex items-center space-x-2">
+            <Sun className="h-4 w-4" />
+            <Switch
+              checked={theme === "dark"}
+              onCheckedChange={toggleTheme}
+            />
+            <Moon className="h-4 w-4" />
+          </div>
+
           <Button 
             variant="outline_tech" 
             size="sm"
             onClick={() => scrollToSection('contacto')}
           >
-            Solicitar Reunión
+            {t('nav.request_meeting')}
           </Button>
         </div>
 
@@ -85,39 +118,61 @@ const Header = () => {
               onClick={() => scrollToSection('inicio')}
               className="text-left text-foreground hover:text-tech-blue transition-colors"
             >
-              Inicio
+              {t('nav.home')}
             </button>
             <button 
               onClick={() => scrollToSection('nosotros')}
               className="text-left text-foreground hover:text-tech-blue transition-colors"
             >
-              Nosotros
+              {t('nav.about')}
             </button>
             <button 
               onClick={() => scrollToSection('servicios')}
               className="text-left text-foreground hover:text-tech-blue transition-colors"
             >
-              Servicios
+              {t('nav.services')}
             </button>
             <button 
               onClick={() => scrollToSection('casos')}
               className="text-left text-foreground hover:text-tech-blue transition-colors"
             >
-              Casos de Éxito
+              {t('nav.cases')}
             </button>
             <button 
               onClick={() => scrollToSection('contacto')}
               className="text-left text-foreground hover:text-tech-blue transition-colors"
             >
-              Contacto
+              {t('nav.contact')}
             </button>
+
+            {/* Mobile Theme and Language Controls */}
+            <div className="flex items-center justify-between pt-4 border-t border-border">
+              <div className="flex items-center space-x-2">
+                <Globe className="h-4 w-4" />
+                <Switch
+                  checked={i18n.language === 'en'}
+                  onCheckedChange={toggleLanguage}
+                />
+                <span className="text-sm">{i18n.language.toUpperCase()}</span>
+              </div>
+              
+              <div className="flex items-center space-x-2">
+                <Sun className="h-4 w-4" />
+                <Switch
+                  checked={theme === "dark"}
+                  onCheckedChange={toggleTheme}
+                />
+                <Moon className="h-4 w-4" />
+              </div>
+            </div>
+
             <Button 
               variant="tech" 
               size="sm"
               onClick={() => scrollToSection('contacto')}
               className="w-fit"
             >
-              Solicitar Reunión
+              {t('nav.request_meeting')}
             </Button>
           </nav>
         </div>
