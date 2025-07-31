@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/ultracore-tech-partner/", // 👈 Agregado para GitHub Pages
+  base: "/ultracore-tech-partner", // 👈 Agregado para GitHub Pages
   server: {
     host: "::",
     port: 8080,
