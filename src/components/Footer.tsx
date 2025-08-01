@@ -1,6 +1,8 @@
 import { Zap } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-dark-surface border-t border-border">
       <div className="container mx-auto px-4 py-8">
@@ -15,10 +17,10 @@ const Footer = () => {
           
           <div className="text-center md:text-right">
             <p className="text-muted-foreground text-sm">
-              © 2024 UltraCore Soluciones IT. Todos los derechos reservados.
+              {t('footer.copyright')}
             </p>
             <p className="text-muted-foreground text-xs mt-1">
-              Transformando empresas con tecnología de vanguardia
+              {t('footer.tagline')}
             </p>
           </div>
         </div>

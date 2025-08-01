@@ -1,7 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShoppingCart, CreditCard, Building2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const CaseStudiesSection = () => {
+  const { t } = useTranslation();
   const cases = [
     {
       icon: ShoppingCart,
@@ -31,11 +33,11 @@ const CaseStudiesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">Casos de </span>
-            <span className="text-tech-blue">Éxito</span>
+            <span className="text-foreground">{t('cases.title1')} </span>
+            <span className="text-tech-blue">{t('cases.title2')}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Transformaciones reales que generaron valor tangible para nuestros clientes
+            {t('cases.description')}
           </p>
         </div>
 

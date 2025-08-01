@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, Globe, Linkedin, Twitter, MessageCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
+  const { t } = useTranslation();
   const openWhatsApp = () => {
     window.open('https://wa.me/5493415403540', '_blank');
   };
@@ -16,11 +18,11 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">Hablemos de tu </span>
-            <span className="text-tech-blue">Proyecto</span>
+            <span className="text-foreground">{t('contact.title1')} </span>
+            <span className="text-tech-blue">{t('contact.title2')}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            ¿Listo para transformar tu empresa con tecnología de vanguardia? Contactanos hoy mismo.
+            {t('contact.description')}
           </p>
         </div>
 

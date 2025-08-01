@@ -1,51 +1,54 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Server, Shield, Database, Code, Users } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ServicesSection = () => {
+  const { t } = useTranslation();
+  
   const services = [
     {
       icon: Server,
-      title: "Infraestructura IT",
+      title: t('services.infrastructure.title'),
       items: [
-        "Diseño y mantenimiento de redes y servidores",
-        "Migraciones (VMware, Proxmox, nube)",
-        "Monitoreo proactivo y soporte remoto"
+        t('services.infrastructure.feature1'),
+        t('services.infrastructure.feature2'),
+        t('services.infrastructure.feature3')
       ]
     },
     {
       icon: Shield,
-      title: "Ciberseguridad",
+      title: t('services.cybersecurity.title'),
       items: [
-        "Auditorías y hardening",
-        "Protección contra ransomware",
-        "Firewalls, VPNs, monitoreo (Prometheus, Grafana)"
+        t('services.cybersecurity.feature1'),
+        t('services.cybersecurity.feature2'),
+        t('services.cybersecurity.feature3')
       ]
     },
     {
       icon: Database,
-      title: "Backups",
+      title: t('services.backups.title'),
       items: [
-        "Locales y en la nube",
-        "Esquema 3-2-1 y restauración",
-        "Gestión de versiones y recuperación ante desastres"
+        t('services.backups.feature1'),
+        t('services.backups.feature2'),
+        t('services.backups.feature3')
       ]
     },
     {
       icon: Code,
-      title: "Desarrollo y Automatización",
+      title: t('services.development.title'),
       items: [
-        "Aplicaciones web (React, Laravel, Python)",
-        "APIs, bots con IA, integraciones",
-        "Optimización de procesos"
+        t('services.development.feature1'),
+        t('services.development.feature2'),
+        t('services.development.feature3')
       ]
     },
     {
       icon: Users,
-      title: "Consultoría IT",
+      title: t('services.consulting.title'),
       items: [
-        "Asesoramiento y estrategia",
-        "Evaluación de riesgos",
-        "Capacitación de equipos"
+        t('services.consulting.feature1'),
+        t('services.consulting.feature2'),
+        t('services.consulting.feature3')
       ]
     }
   ];
@@ -55,11 +58,11 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">Servicios </span>
-            <span className="text-tech-blue">Principales</span>
+            <span className="text-foreground">{t('services.title1')} </span>
+            <span className="text-tech-blue">{t('services.title2')}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Soluciones tecnológicas integrales para impulsar el crecimiento de tu empresa
+            {t('services.description')}
           </p>
         </div>
 

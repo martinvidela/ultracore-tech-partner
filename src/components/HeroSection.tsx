@@ -4,8 +4,11 @@ import { ArrowRight, Shield, Cpu, Cloud, CheckCircle, Server, Lock } from "lucid
 import heroImage from "@/assets/hero-tech.jpg";
 import { useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -15,31 +18,31 @@ const HeroSection = () => {
 
   const carouselSlides = [
     {
-      title: "UltraCore, tu socio tecnológico para crecer sin límites",
-      subtitle: "Impulsamos la transformación digital de tu negocio con soluciones integrales: desarrollo de software, infraestructura IT, automatización y más.",
-      description: "Tecnología estratégica, acompañamiento real y resultados medibles.",
-      ctaText: "Conocé cómo podemos ayudarte",
+      title: t('hero.slide1.title'),
+      subtitle: t('hero.slide1.subtitle'),
+      description: t('hero.slide1.description'),
+      ctaText: t('hero.slide1.cta'),
       ctaAction: () => scrollToSection('servicios'),
       icons: [Shield, Cpu, Cloud]
     },
     {
-      title: "Tus datos siempre protegidos. Backups seguros, automáticos y accesibles.",
-      subtitle: "Evitá pérdidas costosas con nuestras soluciones de respaldo inteligente.",
-      description: "Copias de seguridad diarias, automáticas y protegidas contra fallos, robos o errores humanos.",
-      ctaText: "Resguardá tus datos ahora",
+      title: t('hero.slide2.title'),
+      subtitle: t('hero.slide2.subtitle'),
+      description: t('hero.slide2.description'),
+      ctaText: t('hero.slide2.cta'),
       ctaAction: () => scrollToSection('contacto'),
       features: [
-        "Backups en la nube y físicos",
-        "Recuperación inmediata", 
-        "Seguridad multicapa contra amenazas, ransomware y errores humanos"
+        t('hero.slide2.feature1'),
+        t('hero.slide2.feature2'), 
+        t('hero.slide2.feature3')
       ],
       icons: [Shield, Server, Lock]
     },
     {
-      title: "Tu infraestructura IT, más segura, rápida y eficiente.",
-      subtitle: "Gestionamos, protegemos y optimizamos tus sistemas para que tu empresa nunca se detenga.",
-      description: "Ciberseguridad, soporte y tecnología que acompañan tu crecimiento. Soluciones flexibles y escalables.",
-      ctaText: "Optimizá tu infraestructura",
+      title: t('hero.slide3.title'),
+      subtitle: t('hero.slide3.subtitle'),
+      description: t('hero.slide3.description'),
+      ctaText: t('hero.slide3.cta'),
       ctaAction: () => scrollToSection('servicios'),
       icons: [Server, Shield, Cpu]
     }
@@ -132,7 +135,7 @@ const HeroSection = () => {
                         size="xl"
                         onClick={() => scrollToSection('contacto')}
                       >
-                        Solicitar Reunión
+                        {t('hero.cta_secondary')}
                       </Button>
                     </div>
 
@@ -141,15 +144,15 @@ const HeroSection = () => {
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
                         <div className="text-center">
                           <div className="text-2xl md:text-3xl font-bold text-tech-blue mb-2">10+</div>
-                          <div className="text-sm text-muted-foreground">Años de Experiencia</div>
+                          <div className="text-sm text-muted-foreground">{t('hero.stats.experience')}</div>
                         </div>
                         <div className="text-center">
                           <div className="text-2xl md:text-3xl font-bold text-tech-blue mb-2">24/7</div>
-                          <div className="text-sm text-muted-foreground">Monitoreo Continuo</div>
+                          <div className="text-sm text-muted-foreground">{t('hero.stats.monitoring')}</div>
                         </div>
                         <div className="text-center">
                           <div className="text-2xl md:text-3xl font-bold text-tech-blue mb-2">100%</div>
-                          <div className="text-sm text-muted-foreground">Atención Personalizada</div>
+                          <div className="text-sm text-muted-foreground">{t('hero.stats.attention')}</div>
                         </div>
                       </div>
                     )}

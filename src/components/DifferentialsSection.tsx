@@ -1,32 +1,35 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Eye, FileText, Users, Building } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const DifferentialsSection = () => {
+  const { t } = useTranslation();
+  
   const differentials = [
     {
       icon: Phone,
-      title: "Atención Personalizada",
-      description: "Sin menús automáticos. Habla directamente con nuestros especialistas."
+      title: t('differentials.attention.title'),
+      description: t('differentials.attention.description')
     },
     {
       icon: Eye,
-      title: "Enfoque Preventivo",
-      description: "Anticipamos problemas antes de que afecten tu operación."
+      title: t('differentials.preventive.title'),
+      description: t('differentials.preventive.description')
     },
     {
       icon: FileText,
-      title: "Transparencia Total",
-      description: "Reportes claros y comunicación constante sobre el estado de tus sistemas."
+      title: t('differentials.transparency.title'),
+      description: t('differentials.transparency.description')
     },
     {
       icon: Users,
-      title: "Equipos Especializados",
-      description: "Profesionales certificados en las últimas tecnologías."
+      title: t('differentials.teams.title'),
+      description: t('differentials.teams.description')
     },
     {
       icon: Building,
-      title: "Experiencia Multisectorial",
-      description: "Finanzas, salud, retail, industria. Conocemos tu sector."
+      title: t('differentials.experience.title'),
+      description: t('differentials.experience.description')
     }
   ];
 
@@ -35,11 +38,11 @@ const DifferentialsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-foreground">Ventajas </span>
-            <span className="text-tech-blue">Competitivas</span>
+            <span className="text-foreground">{t('differentials.title1')} </span>
+            <span className="text-tech-blue">{t('differentials.title2')}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Lo que nos diferencia en el mercado de soluciones tecnológicas
+            {t('differentials.description')}
           </p>
         </div>
 
