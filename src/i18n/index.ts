@@ -95,6 +95,13 @@ const resources = {
       'differentials.experience.title': 'Experiencia Multisectorial',
       'differentials.experience.description': 'Finanzas, salud, retail, industria. Conocemos tu sector.',
       
+      // Clients Section
+      'clients.title1': 'Nuestros',
+      'clients.title2': 'Clientes',
+      'clients.description': 'Empresas que confían en nuestras soluciones tecnológicas',
+      'clients.cryptostoker.description': 'Plataforma especializada en análisis y seguimiento de criptomonedas',
+      'clients.fullpagos.description': 'Solución integral de gestión de pagos y facturación',
+      
       // Cases Section
       'cases.title1': 'Casos de',
       'cases.title2': 'Éxito',
@@ -244,6 +251,13 @@ const resources = {
       'differentials.teams.description': 'Professionals certified in the latest technologies.',
       'differentials.experience.title': 'Multi-sector Experience',
       'differentials.experience.description': 'Finance, health, retail, industry. We know your sector.',
+      
+      // Clients Section
+      'clients.title1': 'Our',
+      'clients.title2': 'Clients',
+      'clients.description': 'Companies that trust in our technology solutions',
+      'clients.cryptostoker.description': 'Platform specialized in cryptocurrency analysis and tracking',
+      'clients.fullpagos.description': 'Comprehensive payment and billing management solution',
       
       // Cases Section
       'cases.title1': 'Success',
