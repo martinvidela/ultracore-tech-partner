@@ -10,7 +10,7 @@ const resources = {
       'nav.services': 'Servicios',
       'nav.cases': 'Casos',
       'nav.contact': 'Contacto',
-      'nav.request_meeting': 'Solicitar Reunión',
+      'nav.request_meeting': 'Soporte Remoto',
       
       // Hero Section
       'hero.slide1.title': 'UltraCore, tu socio tecnológico para crecer sin límites',
@@ -148,7 +148,7 @@ const resources = {
       'contact.bottom_cta.button': 'Iniciar Ahora',
       
       // Footer
-      'footer.copyright': '© 2024 UltraCore Soluciones IT. Todos los derechos reservados.',
+      'footer.copyright': '© 2025 UltraCore Soluciones IT. Todos los derechos reservados.',
       'footer.tagline': 'Transformando empresas con tecnología de vanguardia',
     }
   },
@@ -160,7 +160,7 @@ const resources = {
       'nav.services': 'Services',
       'nav.cases': 'Cases',
       'nav.contact': 'Contact',
-      'nav.request_meeting': 'Request Meeting',
+      'nav.request_meeting': 'Remote Support',
       
       // Hero Section
       'hero.slide1.title': 'UltraCore, your technology partner for unlimited growth',
@@ -298,7 +298,7 @@ const resources = {
       'contact.bottom_cta.button': 'Start Now',
       
       // Footer
-      'footer.copyright': '© 2024 UltraCore IT Solutions. All rights reserved.',
+      'footer.copyright': '© 2025 UltraCore IT Solutions. All rights reserved.',
       'footer.tagline': 'Transforming companies with cutting-edge technology',
     }
   }
