@@ -1,21 +1,38 @@
 import { useTranslation } from 'react-i18next';
-import { ExternalLink } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 const ClientsSection = () => {
   const { t } = useTranslation();
 
   const clients = [
-    {
-      name: 'Cryptostoker',
-      url: 'https://cryptostoker.com',
-      description: t('clients.cryptostoker.description'),
-    },
-    {
-      name: 'Fullpagos',
-      url: 'https://fullpagos.com.ar',
-      description: t('clients.fullpagos.description'),
-    },
+    { name: 'Cryptostoker' },
+    { name: 'CleanCity' },
+    { name: 'FullPagos' },
+    { name: 'Marelli SA' },
+    { name: 'Coopar', subtitle: 'Cooperativa de provisión de obras y servicios públicos de Arribeños Ltda.' },
+    { name: 'Servicios Exequiales Cepar SA' },
+    { name: 'Aires de Paz' },
+    { name: 'Seinoa SRL' },
+    { name: 'Kinap' },
+    { name: 'AFIP' },
+    { name: 'Traslados Exclusivos SRL' },
+    { name: 'Opain', subtitle: 'Aeropuerto El Dorado Bogotá - Colombia' },
+    { name: 'Qonteo' },
   ];
+
+  // Group clients into chunks of 4 for each slide
+  const chunkSize = 4;
+  const clientChunks = [];
+  for (let i = 0; i < clients.length; i += chunkSize) {
+    clientChunks.push(clients.slice(i, i + chunkSize));
+  }
 
   return (
     <section id="clients" className="py-20 bg-background">
@@ -30,29 +47,45 @@ const ClientsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {clients.map((client, index) => (
-            <a
-              key={index}
-              href={client.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-8 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                  {client.name}
-                </h3>
-                <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-              </div>
-              <p className="text-muted-foreground mb-4">
-                {client.description}
-              </p>
-              <span className="text-sm text-primary font-medium">
-                {client.url.replace('https://', '')}
-              </span>
-            </a>
-          ))}
+        <div className="max-w-5xl mx-auto px-12">
+          <Carousel
+            opts={{
+              align: 'start',
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent>
+              {clientChunks.map((chunk, chunkIndex) => (
+                <CarouselItem key={chunkIndex}>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {chunk.map((client, index) => (
+                      <div
+                        key={index}
+                        className="group relative p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 flex flex-col items-center justify-center min-h-[140px] text-center"
+                      >
+                        <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                          {client.name}
+                        </h3>
+                        {client.subtitle && (
+                          <p className="text-xs text-muted-foreground mt-2 leading-tight">
+                            {client.subtitle}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="border-border hover:bg-primary hover:text-primary-foreground" />
+            <CarouselNext className="border-border hover:bg-primary hover:text-primary-foreground" />
+          </Carousel>
         </div>
       </div>
     </section>
