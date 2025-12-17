@@ -13,10 +13,10 @@ const resources = {
       'nav.request_meeting': 'Soporte Remoto',
       
       // Hero Section
-      'hero.slide1.title': 'UltraCore, tu socio tecnológico para crecer sin límites',
-      'hero.slide1.subtitle': 'Impulsamos la transformación digital de tu negocio con soluciones integrales: desarrollo de software, infraestructura IT, automatización y más.',
+      'hero.slide1.title': 'UltraCore, desarrollo de software, desarrollos móviles, sitios profesionales',
+      'hero.slide1.subtitle': 'Transformamos ideas en productos tecnológicos de alto impacto',
       'hero.slide1.description': 'Tecnología estratégica, acompañamiento real y resultados medibles.',
-      'hero.slide1.cta': 'Conocé cómo podemos ayudarte',
+      'hero.slide1.cta': 'Comentanos tu proyecto',
       
       'hero.slide2.title': 'Tus datos siempre protegidos. Backups seguros, automáticos y accesibles.',
       'hero.slide2.subtitle': 'Evitá pérdidas costosas con nuestras soluciones de respaldo inteligente.',
@@ -170,10 +170,10 @@ const resources = {
       'nav.request_meeting': 'Remote Support',
       
       // Hero Section
-      'hero.slide1.title': 'UltraCore, your technology partner for unlimited growth',
-      'hero.slide1.subtitle': 'We drive your business digital transformation with comprehensive solutions: software development, IT infrastructure, automation and more.',
+      'hero.slide1.title': 'UltraCore, software development, mobile apps, professional websites',
+      'hero.slide1.subtitle': 'We transform ideas into high-impact technology products',
       'hero.slide1.description': 'Strategic technology, real support and measurable results.',
-      'hero.slide1.cta': 'Learn how we can help you',
+      'hero.slide1.cta': 'Tell us about your project',
       
       'hero.slide2.title': 'Your data always protected. Secure, automatic and accessible backups.',
       'hero.slide2.subtitle': 'Avoid costly losses with our intelligent backup solutions.',
