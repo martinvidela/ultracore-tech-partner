@@ -35,7 +35,7 @@ const HeroSection = () => {
       subtitle: t("hero.slide1.subtitle"),
       description: t("hero.slide1.description"),
       ctaText: t("hero.slide1.cta"),
-      ctaAction: () => scrollToSection("servicios"),
+      ctaAction: () => scrollToSection("contacto"),
       icons: [Shield, Cpu, Cloud],
     },
     {
